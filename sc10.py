@@ -53,7 +53,7 @@ class SC10:
     
     def closeShutter(self):
         """
-        closes shutter if closed
+        closes shutter if opened
         """
         if self.qopenShutter():
             self.toggleShutter()
