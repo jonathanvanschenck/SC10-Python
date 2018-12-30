@@ -1,9 +1,9 @@
-import time
+import time, sc10
 try:
     bb.shutdown()
 except:
     pass
-bb = SC10()
+bb = sc10.SC10()
 bb.openShutter()
 print('Shutter Open? '+str(bb.qopenShutter()))
 time.sleep(1)
