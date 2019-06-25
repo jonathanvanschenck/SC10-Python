@@ -10,8 +10,8 @@ class SC10:
         Initialized hardware with a closed shutter
         """
         self.ser = serial.Serial(comport,9600,timeout=1,parity=serial.PARITY_NONE,stopbits=serial.STOPBITS_ONE,bytesize=serial.EIGHTBITS)
-        self.ser.write("mode=0\r".encode())
-        self.ser.read(20)
+        jump = self.ser.write("mode=0\r".encode())
+        self.ser.read(size=jump+2)
         if self.qopenShutter():
             self.toggleShutter()
         
